@@ -2357,11 +2357,10 @@ class MaskRCNN(object):
         # multiprocessing workers. See discussion here:
         # https://github.com/matterport/Mask_RCNN/issues/13#issuecomment-353124009
         if os.name == 'nt':
-            workers = 0
+            workers = 1
         else:
-            workers = multiprocessing.cpu_count()
+            workers = 1
 
-	workers = 1
 
         self.keras_model.fit(
             train_generator,
